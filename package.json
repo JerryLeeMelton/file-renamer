@@ -1,0 +1,11 @@
+{
+  "name": "file-renamer",
+  "version": "1.0.0",
+  "description": "GUI file renamer",
+  "main": "main.js",
+  "license": "MIT",
+  "author": "Jerry Lee Melton",
+  "devDependencies": {
+    "electron": "^28.1.0"
+  }
+}
