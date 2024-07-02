@@ -14,6 +14,13 @@ const createWindow = () => {
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
     },
+    // Hides window until content is loaded
+    show: false,
+    // Sets background color of blank window 
+    // to minimize "flicker" upon loading
+    // TODO: Set this to the actual background color
+    // of the app as defined by the CSS later
+    backgroundColor: "#333333"
   });
 
   // and load the index.html of the app.
@@ -21,6 +28,8 @@ const createWindow = () => {
 
   // Open the DevTools.
   mainWindow.webContents.openDevTools();
+
+  mainWindow.once("ready-to-show", mainWindow.show)
 };
 
 // This method will be called when Electron has finished
